@@ -56,11 +56,12 @@ def apply_coupons(cart, coupons)
    
    coupon_item = coupons[i][:item]
    coupon_num = coupons[i][:num]
-   cart_item_num = cart_item[:count]
    
    cart_item = find_item_by_name_in_collection(coupon_item, cart)
    couponed_item_name = "#{coupon_item} W/COUPON"
    cart_item_with_coupon = find_item_by_name_in_collection(couponed_item_name, cart)
+   
+   cart_item_num = cart_item[:count]
   
   if cart_item && cart_item_num >= coupon_num 
     
