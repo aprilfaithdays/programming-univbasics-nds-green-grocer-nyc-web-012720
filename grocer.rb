@@ -76,7 +76,7 @@ def apply_coupons(cart, coupons)
          :count => coupon_num,
        }
        cart << cart_item_with_coupon
-       cart_item[:count] -= coupon_num
+       cart_item_num -= coupon_num 
      end
    end
    i += 1
