@@ -76,7 +76,6 @@ def apply_coupons(cart, coupons)
        cart << cart_item_with_coupon
        cart_item[:count] -= coupon_num
      end
-     
    end
    i += 1
  end
@@ -88,6 +87,14 @@ def apply_clearance(cart)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
+  i = 0
+  while i < cart.length do
+    if cart[i][:clearance]
+      cart[i][:price] = (cart[i][:price] - (cart[i][:price] * 0.20)).round(2)
+    end
+    i += 1
+  end
 end
 
 
